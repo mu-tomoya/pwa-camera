@@ -1,13 +1,9 @@
 <template>
   <div id="app">
     <div><video ref="video" id="video"  autoplay playsinline ></video></div>
-    <div><button id="snap" v-on:click="capture()" >Snap Photo</button></div>
+    <!--  <div><button id="snap" v-on:click="capture()" >Snap Photo</button></div> -->
     <canvas ref="canvas" id="canvas"></canvas>
-    <ul>
-      <li v-for="c in captures" :key="c">
-        <img v-bind:src="c" height="50" />
-      </li>
-    </ul>
+
   </div>
 </template>
 
@@ -40,7 +36,9 @@ export default {
     capture () {
       this.canvas = this.$refs.canvas
       const context = this.canvas.getContext('2d')
-      context.drawImage(this.video, 0, 0, 640, 480)
+      const w = window.innerWidth
+      const h = window.innerHeight
+      context.drawImage(this.video, 0, 0, w, h)
       this.captures.push(this.canvas.toDataURL('image/png'))
     }
   }
@@ -63,21 +61,18 @@ body {
   background-color: #000000;
   display: block;
   width: 100%;
+  height: 100%;
 }
 
 #canvas {
   display: none;
   width: 100%;
-}
-
-li {
-  display: inline;
-  padding: 5px;
+  height: 100%;
 }
 
 main {
   text-align: center;
-  margin-top: 40px;
+  margin: 0px;
 }
 
 </style>
