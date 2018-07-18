@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div><video ref="video" id="video" width="640" height="480" autoplay playsinline ></video></div>
+    <div><video ref="video" id="video"  autoplay playsinline ></video></div>
     <div><button id="snap" v-on:click="capture()" >Snap Photo</button></div>
-    <canvas ref="canvas" id="canvas" width="640" height="480" ></canvas>
+    <canvas ref="canvas" id="canvas"></canvas>
     <ul>
       <li v-for="c in captures" :key="c">
         <img v-bind:src="c" height="50" />
@@ -22,9 +22,15 @@ export default {
     }
   },
   mounted () {
+    const medias = {audio: false,
+      video: {
+        facingMode: {
+          exact: 'environment'
+        }
+      }}
     this.video = this.$refs.video
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+      navigator.mediaDevices.getUserMedia(medias).then(stream => {
         this.video.src = window.URL.createObjectURL(stream)
         this.video.play()
       })
@@ -44,6 +50,7 @@ export default {
 <style>
 body {
   background-color: #F0F0F0;
+  margin: 0px;
 }
 
 #app {
@@ -54,10 +61,13 @@ body {
 
 #video {
   background-color: #000000;
+  display: block;
+  width: 100%;
 }
 
 #canvas {
   display: none;
+  width: 100%;
 }
 
 li {
