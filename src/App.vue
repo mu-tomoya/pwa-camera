@@ -3,7 +3,6 @@
     <div><video ref="video" id="video"  autoplay playsinline ></video></div>
     <!--  <div><button id="snap" v-on:click="capture()" >Snap Photo</button></div> -->
     <canvas ref="canvas" id="canvas"></canvas>
-
   </div>
 </template>
 
@@ -47,14 +46,13 @@ export default {
 
 <style>
 body {
-  background-color: #F0F0F0;
+  background-color: #000000;
   margin: 0px;
 }
 
 #app {
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 #video {
@@ -67,12 +65,7 @@ body {
 #canvas {
   display: none;
   width: 100%;
-  height: 100%;
 }
 
-main {
-  text-align: center;
-  margin: 0px;
-}
 
 </style>
