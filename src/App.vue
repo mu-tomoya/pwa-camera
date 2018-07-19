@@ -61,6 +61,7 @@ body {
   background-color: #000000;
   display: block;
   width: 100%;
+  height: 100%;
 }
 
 #canvas {
