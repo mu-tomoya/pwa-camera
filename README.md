@@ -1,30 +1,31 @@
-# pwa-camera
+# PWA-CAMERA
+https://mu-tomoya.github.io/pwa-camera/#/
 
-> A Vue.js project
+![QRコード](./QRCode.png)
 
-## Build Setup
+#注意
+PWAでカメラアプリを作ろうとしたところ、Safariでは動いたけれど、
+肝心のPWAでは動きませんでした。試す際はそこだけ注意してください。
+2018年7月現在の失敗作です。
 
-``` bash
-# install dependencies
-npm install
+Qiita記事
+https://qiita.com/mu_tomoya/items/d35dbb580a561c562ca6
 
-# serve with hot reload at localhost:8080
-npm run dev
+# Project
+フレームワーク　Vue.js
+```bash
 
-# build for production with minification
-npm run build
+# yarnインストール
+npm -g install yarn
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# モジュールインストール
+yarn
 
-# run unit tests
-npm run unit
+# dev
+yarn dev
 
-# run e2e tests
-npm run e2e
+# build
+yarn build
 
-# run all tests
-npm test
+
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
