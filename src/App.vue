@@ -28,6 +28,8 @@ export default {
       navigator.mediaDevices.getUserMedia(medias).then(stream => {
         this.video.src = window.URL.createObjectURL(stream)
         this.video.play()
+      }).catch(err => {
+        alert(err)
       })
     }
   },
@@ -59,7 +61,6 @@ body {
   background-color: #000000;
   display: block;
   width: 100%;
-  height: 100%;
 }
 
 #canvas {
