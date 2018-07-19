@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <div><video ref="video" id="video"  autoplay playsinline ></video></div>
-    <!--  <div><button id="snap" v-on:click="capture()" >Snap Photo</button></div> -->
-    <canvas ref="canvas" id="canvas"></canvas>
+    <video ref="video" id="video"  autoplay playsinline ></video>
   </div>
 </template>
 
@@ -11,9 +9,7 @@ export default {
   name: 'app',
   data () {
     return {
-      video: {},
-      canvas: {},
-      captures: []
+      video: {}
     }
   },
   mounted () {
@@ -30,16 +26,6 @@ export default {
       }).catch(err => {
         alert(err)
       })
-    }
-  },
-  methods: {
-    capture () {
-      this.canvas = this.$refs.canvas
-      const context = this.canvas.getContext('2d')
-      const w = window.innerWidth
-      const h = window.innerHeight
-      context.drawImage(this.video, 0, 0, w, h)
-      this.captures.push(this.canvas.toDataURL('image/png'))
     }
   }
 }
