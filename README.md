@@ -1,4 +1,4 @@
-# vue-pwa
+# pwa-camera
 
 > A Vue.js project
 
