@@ -6,7 +6,7 @@ https://mu-tomoya.github.io/pwa-camera/#/
 #注意
 PWAでカメラアプリを作ろうとしたところ、Safariでは動いたけれど、
 肝心のPWAでは動きませんでした。試す際はそこだけ注意してください。
-2018年7月現在の失敗作です。
+2018年7月現在の失敗作です。
 
 Qiita記事
 https://qiita.com/mu_tomoya/items/d35dbb580a561c562ca6
